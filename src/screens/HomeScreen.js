@@ -183,7 +183,7 @@ const HomeScreen = ({ navigation }) => {
         <Ionicons name="map" size={20} color={colors.white} />
       </TouchableOpacity>
 
-      {/* Quick Stats */}
+      {/* Quick Stats - Moved to bottom to avoid blocking map controls */}
       <View style={styles.statsContainer}>
         <View style={styles.statItem}>
           <Text style={styles.statNumber}>{mockReports.length}</Text>
@@ -247,7 +247,7 @@ const styles = StyleSheet.create({
   },
   fab: {
     position: 'absolute',
-    bottom: 100,
+    bottom: 120,
     right: 20,
     width: 56,
     height: 56,
@@ -259,7 +259,7 @@ const styles = StyleSheet.create({
   },
   mapFab: {
     position: 'absolute',
-    bottom: 170,
+    bottom: 190,
     right: 20,
     width: 48,
     height: 48,
@@ -271,7 +271,7 @@ const styles = StyleSheet.create({
   },
   statsContainer: {
     position: 'absolute',
-    top: 100,
+    bottom: 20,
     left: 20,
     right: 20,
     backgroundColor: colors.white,
