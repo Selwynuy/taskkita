@@ -1,4 +1,5 @@
 import React from 'react';
+import { TouchableOpacity, View, StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -20,7 +21,7 @@ import ProfileScreen from '../screens/ProfileScreen';
 import ReportApprovalScreen from '../screens/ReportApprovalScreen';
 import TaskApplicationApprovalScreen from '../screens/TaskApplicationApprovalScreen';
 import AdminDashboardScreen from '../screens/AdminDashboardScreen';
-import MapScreen from '../screens/MapScreen';
+// import MapScreen from '../screens/MapScreen';
 
 import { colors } from '../theme/colors';
 
@@ -52,6 +53,8 @@ function MainTabNavigator() {
         tabBarStyle: {
           backgroundColor: colors.white,
           borderTopColor: colors.lightGray,
+          height: 70,
+          paddingBottom: 8,
         },
         headerStyle: {
           backgroundColor: colors.primary,
@@ -60,10 +63,29 @@ function MainTabNavigator() {
         headerTitleStyle: {
           fontWeight: 'bold',
         },
+        tabBarShowLabel: true,
       })}
     >
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="MyTasks" component={MyTasksScreen} options={{ title: 'My Tasks' }} />
+      {/* Center Capture Button */}
+      <Tab.Screen 
+        name="Capture"
+        component={ReportScreen}
+        options={{
+          tabBarLabel: '',
+          tabBarIcon: () => (
+            <Ionicons name="add" size={28} color={colors.white} />
+          ),
+          tabBarButton: (props) => (
+            <TouchableOpacity {...props} style={styles.centerButton}>
+              <View style={styles.centerButtonInner}>
+                <Ionicons name="add" size={28} color={colors.white} />
+              </View>
+            </TouchableOpacity>
+          ),
+        }}
+      />
       <Tab.Screen name="Payment" component={PaymentScreen} />
       <Tab.Screen name="Profile" component={ProfileScreen} />
     </Tab.Navigator>
@@ -131,7 +153,7 @@ function AppNavigator() {
         <Stack.Screen name="Admin" component={AdminTabNavigator} />
         <Stack.Screen name="Report" component={ReportScreen} />
         <Stack.Screen name="TaskDetails" component={TaskDetailsScreen} />
-        <Stack.Screen name="Map" component={MapScreen} />
+        {/** Map screen removed */}
         <Stack.Screen name="CheckIn" component={CheckInScreen} />
         <Stack.Screen name="ProofSubmission" component={ProofSubmissionScreen} />
       </Stack.Navigator>
@@ -140,3 +162,24 @@ function AppNavigator() {
 }
 
 export default AppNavigator;
+
+const styles = StyleSheet.create({
+  centerButton: {
+    top: -22,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  centerButtonInner: {
+    width: 64,
+    height: 64,
+    borderRadius: 32,
+    backgroundColor: colors.primary,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.25,
+    shadowRadius: 6,
+    elevation: 8,
+  },
+});

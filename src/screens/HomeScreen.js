@@ -171,37 +171,9 @@ const HomeScreen = ({ navigation }) => {
         />
       </View>
 
-      {/* Floating Action Buttons */}
-      <TouchableOpacity style={styles.fab} onPress={handleNewReport}>
-        <Ionicons name="add" size={24} color={colors.white} />
-      </TouchableOpacity>
-      
-      <TouchableOpacity 
-        style={styles.mapFab} 
-        onPress={() => navigation.navigate('Map')}
-      >
-        <Ionicons name="map" size={20} color={colors.white} />
-      </TouchableOpacity>
+      {/* Floating action buttons removed (capture now on center tab) */}
 
-      {/* Quick Stats - Moved to bottom to avoid blocking map controls */}
-      <View style={styles.statsContainer}>
-        <View style={styles.statItem}>
-          <Text style={styles.statNumber}>{mockReports.length}</Text>
-          <Text style={styles.statLabel}>Reports</Text>
-        </View>
-        <View style={styles.statItem}>
-          <Text style={styles.statNumber}>
-            {mockTasks.filter(task => task.status === 'active').length}
-          </Text>
-          <Text style={styles.statLabel}>Active Tasks</Text>
-        </View>
-        <View style={styles.statItem}>
-          <Text style={styles.statNumber}>
-            {mockTasks.filter(task => task.status === 'completed').length}
-          </Text>
-          <Text style={styles.statLabel}>Completed</Text>
-        </View>
-      </View>
+      {/* Quick stats removed */}
     </View>
   );
 };
@@ -245,55 +217,8 @@ const styles = StyleSheet.create({
     flex: 1,
     position: 'relative',
   },
-  fab: {
-    position: 'absolute',
-    bottom: 120,
-    right: 20,
-    width: 56,
-    height: 56,
-    borderRadius: 28,
-    backgroundColor: colors.primary,
-    justifyContent: 'center',
-    alignItems: 'center',
-    ...shadows.large,
-  },
-  mapFab: {
-    position: 'absolute',
-    bottom: 190,
-    right: 20,
-    width: 48,
-    height: 48,
-    borderRadius: 24,
-    backgroundColor: colors.accent,
-    justifyContent: 'center',
-    alignItems: 'center',
-    ...shadows.medium,
-  },
-  statsContainer: {
-    position: 'absolute',
-    bottom: 20,
-    left: 20,
-    right: 20,
-    backgroundColor: colors.white,
-    borderRadius: 12,
-    padding: 16,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    ...shadows.medium,
-  },
-  statItem: {
-    alignItems: 'center',
-  },
-  statNumber: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: colors.primary,
-  },
-  statLabel: {
-    fontSize: 12,
-    color: colors.gray,
-    marginTop: 4,
-  },
+  // floating action styles removed
+  // quick stats styles removed
 });
 
 export default HomeScreen;
