@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, View, StyleSheet } from 'react-native';
+import { TouchableOpacity, View, StyleSheet, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -73,7 +73,7 @@ function MainTabNavigator() {
         name="Capture"
         component={ReportScreen}
         options={{
-          tabBarLabel: '',
+          tabBarLabel: 'Capture',
           tabBarIcon: () => (
             <Ionicons name="add" size={28} color={colors.white} />
           ),
@@ -82,6 +82,9 @@ function MainTabNavigator() {
               <View style={styles.centerButtonInner}>
                 <Ionicons name="add" size={28} color={colors.white} />
               </View>
+              <Text style={[styles.centerLabel, { color: props?.accessibilityState?.selected ? colors.primary : colors.gray }]}>
+                Capture
+              </Text>
             </TouchableOpacity>
           ),
         }}
@@ -181,5 +184,10 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 6,
     elevation: 8,
+  },
+  centerLabel: {
+    marginTop: 4,
+    fontSize: 10,
+    fontWeight: '500',
   },
 });
