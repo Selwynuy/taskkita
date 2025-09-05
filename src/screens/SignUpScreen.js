@@ -96,7 +96,7 @@ const SignUpScreen = ({ navigation }) => {
             <Ionicons name="arrow-back" size={24} color={colors.text} />
           </TouchableOpacity>
           <Text style={styles.title}>Create Account</Text>
-          <Text style={styles.subtitle}>Join TaskKita today</Text>
+          <Text style={styles.subtitle}>Join TrashKita today</Text>
         </View>
 
         <View style={styles.form}>

@@ -1,4 +1,4 @@
-// Mock data for TaskKita app
+// Mock data for TrashKita app
 
 export const mockUsers = [
   {

@@ -70,7 +70,7 @@ const SplashScreen = ({ navigation }) => {
       </Animated.View>
 
       <Animated.View style={[styles.textContainer, { opacity: textOpacity }]}>
-        <Text style={styles.appName}>TaskKita</Text>
+        <Text style={styles.appName}>TrashKita</Text>
         <Text style={styles.tagline}>Clean Communities, Better Future</Text>
       </Animated.View>
 

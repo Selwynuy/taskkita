@@ -42,9 +42,9 @@ const ProfileScreen = ({ navigation }) => {
     },
     {
       id: 'about',
-      title: 'About TaskKita',
+              title: 'About TrashKita',
       icon: 'information-circle-outline',
-      onPress: () => Alert.alert('About', 'About TaskKita information will be displayed here'),
+              onPress: () => Alert.alert('About', 'About TrashKita information will be displayed here'),
     },
   ];
 
@@ -177,7 +177,7 @@ const ProfileScreen = ({ navigation }) => {
 
         {/* App Version */}
         <View style={styles.versionContainer}>
-          <Text style={styles.versionText}>TaskKita v1.0.0</Text>
+          <Text style={styles.versionText}>TrashKita v1.0.0</Text>
         </View>
       </ScrollView>
     </View>

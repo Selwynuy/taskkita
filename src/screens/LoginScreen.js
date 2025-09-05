@@ -41,8 +41,8 @@ const LoginScreen = ({ navigation }) => {
     setTimeout(() => {
       setIsLoading(false);
       
-      // Mock login logic - for demo purposes
-      if (email === 'admin@lgu.gov.ph') {
+      // Demo login - accept any valid email/password
+      if (email.includes('admin') || email.includes('lgu')) {
         navigation.replace('Admin');
       } else {
         navigation.replace('Main');
@@ -141,10 +141,9 @@ const LoginScreen = ({ navigation }) => {
 
         <View style={styles.footer}>
           <Text style={styles.footerText}>
-            Demo Accounts:{'\n'}
-            Citizen: john@example.com{'\n'}
-            Worker: jane@example.com{'\n'}
-            LGU Admin: admin@lgu.gov.ph
+            Demo Mode:{'\n'}
+            Enter any email + password{'\n'}
+            (Admin accounts: use 'admin' or 'lgu' in email)
           </Text>
         </View>
       </ScrollView>

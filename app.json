@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "taskkita",
-    "slug": "taskkita",
+      "name": "trashkita",
+  "slug": "trashkita",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,7 +21,7 @@
       [
         "expo-location",
         {
-          "locationAlwaysAndWhenInUsePermission": "Allow TaskKita to use your location to show nearby reports and tasks on the map."
+          "locationAlwaysAndWhenInUsePermission": "Allow TrashKita to use your location to show nearby reports and tasks on the map."
         }
       ]
     ],

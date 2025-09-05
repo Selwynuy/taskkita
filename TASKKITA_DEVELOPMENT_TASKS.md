@@ -1,4 +1,4 @@
-# TaskKita Mobile App Development Tasks
+# TrashKita Mobile App Development Tasks
 
 ## Phase 1: Project Setup & Foundation
 - [x] Initialize React Native project with Expo
